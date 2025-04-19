@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jobbie Chatbot Popover</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f9fa;
+    }
+
+    #open-chatbot-btn {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #open-chatbot-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="open-chatbot-btn">Lancer Jobbie 🤖</button>
+
+  <script type="text/javascript">
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        const chat = window.voiceflow.chat.load({
+          verify: { projectID: '6803c3e8de7198d1aec8790d' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          render: {
+            mode: 'popover',
+            trigger: '#open-chatbot-btn'
+          }
+        });
+      };
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+
+</body>
+</html>
