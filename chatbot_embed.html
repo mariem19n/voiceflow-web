@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Voiceflow Chatbot</title>
+  <title>Voiceflow Chatbot Widget</title>
   <style>
     html, body {
       margin: 0;
@@ -10,44 +10,30 @@
       height: 100%;
       width: 100%;
       overflow: hidden;
-    }
-
-    #chat-container {
-      height: 100vh;
-      width: 100vw;
-    }
-
-    iframe {
-      height: 100vh !important;
-      width: 100vw !important;
-      border: none !important;
+      background-color: white;
     }
   </style>
 </head>
 <body>
-  <div id="chat-container"></div>
 
-  <script type="text/javascript">
-    (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '6803c3e8de7198d1aec8790d' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          },
-          render: {
-            mode: 'embedded',
-            target: document.getElementById("chat-container")
-          }
-        });
-      };
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      v.type = "text/javascript";
-      s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+<script type="text/javascript">
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '6803c3e8de7198d1aec8790d' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+        voice: {
+          url: "https://runtime-api.voiceflow.com"
+        }
+      });
+    };
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
 </body>
 </html>
