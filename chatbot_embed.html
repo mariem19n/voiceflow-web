@@ -4,17 +4,21 @@
   <meta charset="UTF-8">
   <title>Voiceflow Chatbot</title>
   <style>
-    html, body, #chat-container {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
       overflow: hidden;
     }
+
+    #chat-container {
+      height: 100vh; /* Viewport height */
+      width: 100vw;
+    }
   </style>
 </head>
 <body>
-  <!-- Target container for the chatbot -->
   <div id="chat-container"></div>
 
   <script type="text/javascript">
@@ -33,7 +37,7 @@
             target: document.getElementById("chat-container")
           }
         });
-      }
+      };
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
       v.type = "text/javascript";
       s.parentNode.insertBefore(v, s);
